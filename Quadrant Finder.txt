@@ -1,0 +1,48 @@
+CODE
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x, y;
+    
+    // قراءة الإحداثيات
+    cout << "Enter x and y coordinates: ";
+    cin >> x >> y;
+
+    // الحالة الخاصة: الأصل
+    if (x == 0 && y == 0) {
+        cout << "Origin" << endl;
+    }
+    // إذا كانت النقطة على المحور X
+    else if (y == 0) {
+        cout << "X-Axis" << endl;
+    }
+    // إذا كانت النقطة على المحور Y
+    else if (x == 0) {
+        cout << "Y-Axis" << endl;
+    }
+    // إذا النقطة في أي ربع
+    else {
+        if (x > 0) {
+            if (y > 0) {
+                cout << "Q1" << endl;
+            } else {
+                cout << "Q4" << endl;
+            }
+        } else { // x < 0
+            if (y > 0) {
+                cout << "Q2" << endl;
+            } else {
+                cout << "Q3" << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+
+
+
+
+LOGIC

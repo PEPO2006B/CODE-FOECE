@@ -1,0 +1,45 @@
+code//
+#include <iostream>
+#include <algorithm>  
+using namespace std;
+
+int main() {
+    int q;
+    cin >> q;
+    cout << "Entered q: " << q << endl;
+
+    while (q--) {
+        int n;
+        cin >> n;
+		cout << "Entered n: " << n << endl;
+
+        string s, t;
+        cin >> s >> t;
+
+        int freqS[26] = { 0 };
+        int freqT[26] = { 0 };
+
+        for (char c : s) freqS[c - 'a']++;
+        for (char c : t) freqT[c - 'a']++;
+
+        bool ok = true;
+        for (int i = 0; i < 26; i++) {
+            if (freqS[i] != freqT[i]) {
+                ok = false;
+                break;
+            }
+        }
+
+        if (ok) cout << "YES\n";
+        else cout << "NO\n";
+    }
+
+    return 0;
+}
+
+input -> q and n 
+and words 
+
+output-> YES or NO
+
+

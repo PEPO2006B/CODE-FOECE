@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+CODE
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
+
+        int count0=0, count1=0;
+        for(int i=0;i<n;i++){
+            if(a[i]==0) count0++;
+            if(a[i]==1) count1++;
+        }
+
+        int score = min(count0,1) + min(count1,1);
+        cout << score << endl;
+    }
+}
+
+
+LOGIC
+Balance كل رقم بيتكرار علي حسب عدده يعني 1 ب1 2ب2 وهكذا
+
+INPUT-> T,N<VALUES OF ARR
+
+PROCESS->int deletions = 0;
+        for(auto &[x,c]: count){
+            if(c < x) deletions += c;
+            else if(c > x) deletions += c - x
+
+OUTPUT->delection =value

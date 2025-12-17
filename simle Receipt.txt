@@ -1,0 +1,33 @@
+#include <iostream>
+#include <iomanip> // for setprecision
+using namespace std;
+
+int main() {
+    string item;
+    int qty;
+    double price;
+
+    // ===== INPUT =====
+    cin >> item >> qty >> price;
+
+    // ===== PROCESSING =====
+    double total = qty * price;
+
+    // ===== OUTPUT =====
+    cout << fixed << setprecision(2);
+    cout << "Total: " << total << endl;
+
+    return 0;
+}
+
+
+
+
+
+Logic
+عايزين نحسب total 
+INPUT-> items,QTY,PRICE
+
+PROCESS-> TOTAL=QTY*PRICE
+
+OUTPUT->TOTAL

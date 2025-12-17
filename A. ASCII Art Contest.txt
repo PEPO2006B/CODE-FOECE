@@ -1,0 +1,39 @@
+codig
+
+#include <iostream>
+#include <algorithm>  
+using namespace std;
+
+int main() {
+    int g, c, l;
+    cin >> g >> c >> l;
+
+    int mx = max({ g, c, l });   
+    int mn = min({ g, c, l });  
+
+    if (mx - mn >= 10) {
+        cout << "check again";
+    }
+    else {
+        int arr[3] = { g, c, l };
+        sort(arr, arr + 3);    
+        cout << "final " << arr[1]; 
+    }
+
+    return 0;
+}
+
+
+Logic 
+احنا عايزين نعرف الفرق بين 3 درجات كبير ولا قليل
+
+INPUT-> Gegree of I  , C , G
+
+
+PROCESS-> MAX-MIN
+IF 10<=MAX-MIN -> Check again
+
+
+ELSE Final
+
+OUTPUT-> cout << "final " << arr[1]

@@ -1,0 +1,40 @@
+CODE
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    for(int i = 0; i < n; i++) {
+        string name, rank;
+        int papers, hours;
+        cin >> ws; 
+        getline(cin, name, ' '); 
+        getline(cin, name, ' ');
+        cin >> papers >> hours >> rank;
+
+        int base, extra; 
+        double deduction;
+
+        if(rank == "Professor") { base=1000; extra=100; deduction=2; }
+        else if(rank == "Associate") { base=800; extra=80; deduction=1.5; }
+        else if(rank == "Lecturer") { base=600; extra=50; deduction=1; }
+        else { base=400; extra=30; deduction=0.5; }
+
+        double grant = base + (papers*extra) - (hours*deduction);
+        if(grant < 0) grant = 0;
+
+        cout << name << " : " << grant << endl;
+    }
+    return 0;
+}
+
+LOGIC
+
+INPUT->NAME,PAPERS,HOURS
+
+OUTPUT->NAME,AMOUNT
+
+PROCESS->double grant = base + (papers*extra) - (hours*deduction);

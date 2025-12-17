@@ -1,0 +1,45 @@
+CODE
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int n;
+        cin >> n;
+        vector<long long> a(n);
+        for (int i = 0; i < n; i++) cin >> a[i];
+        long long x;
+        cin >> x;
+
+        bool can = false;
+        for (int i = 0; i < n-1; i++) {
+            long long mn = min(a[i], a[i+1]);
+            long long mx = max(a[i], a[i+1]);
+            if (mn <= x && x <= mx) {
+                can = true;
+                break;
+            }
+        }
+
+        cout << (can ? "YES" : "NO") << "\n";
+    }
+}
+
+
+
+
+logic 
+هل الرقمين الجنب بعض نفس المده بتاع X
+ولا لاء
+
+input-> T,N,X
+
+
+process -> mn = min(a[i], a[i+1])
+           mx = max(a[i], a[i+1])
+
+
+
+output-> YES or NO

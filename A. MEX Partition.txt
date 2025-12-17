@@ -1,0 +1,34 @@
+CODE
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
+
+        int count0=0, count1=0;
+        for(int i=0;i<n;i++){
+            if(a[i]==0) count0++;
+            if(a[i]==1) count1++;
+        }
+
+        int score = min(count0,1) + min(count1,1);
+        cout << score << endl;
+    }
+}
+
+
+LOGIC
+اصغر عدد صحيح مش موجود في المجموعة 
+
+INPUT-> T,N,Arr
+
+process-> int score = min(count0,1) + min(count1,1);
+
+OUTPUT-> Min of value dont Ava in Arr

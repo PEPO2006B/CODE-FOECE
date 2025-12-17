@@ -1,0 +1,47 @@
+CODE
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+        for (int i = 0; i < n; ++i) cin >> a[i];
+
+        int g = a[0];
+        for (int i = 1; i < n; ++i) g = std::gcd(g, a[i]);
+
+        int idx = -1; 
+        for (int i = 0; i < n; ++i) {
+            if (a[i] != g) { idx = i; break; }
+        }
+
+        if (idx == -1) {
+            cout << "No\n";
+        } else {
+            cout << "Yes\n";
+            
+            for (int i = 0; i < n; ++i) {
+                if (i) cout << ' ';
+                if (i == idx) cout << 1;
+                else cout << 2;
+            }
+            cout << '\n';
+        }
+    }
+    return 0;
+}
+
+
+LOGIC
+
+INPUT->N,Array
+
+OUTPUT-> Y OR N
+
+PROCESS->
